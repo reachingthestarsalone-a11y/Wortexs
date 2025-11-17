@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            color: white;
+        }
+
+        .main-card {
+            width: 500px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            position: relative;
+            display: flex;
+            gap: 20px;
+        }
+
+        .avatar-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .avatar-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .info-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .username {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .description {
+            font-size: 0.9em;
+            opacity: 0.8;
+            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Кнопки в правом нижнем углу */
+        .corner-buttons {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .corner-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            font-size: 0.9em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .corner-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .tg-btn {
+            background: rgba(0, 136, 204, 0.4);
+        }
+
+        .tg-btn:hover {
+            background: rgba(0, 136, 204, 0.6);
+        }
+
+        .tgk-btn {
+            background: rgba(255, 165, 0, 0.4);
+        }
+
+        .tgk-btn:hover {
+            background: rgba(255, 165, 0, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="main-card">
+        <!-- Аватар -->
+        <div class="avatar-container">
+            <img id="telegram-avatar" src="https://github.com/reachingthestarsalone-a11y/BIO/blob/main/mbeech.jpg?raw=true" alt="Avatar" class="avatar-img">
+        </div>
+
+        <!-- Информация -->
+        <div class="info-container">
+            <div>
+                <div class="username" id="telegram-username">Wortex</div>
+                <div class="description" id="description">
+                    Начинающий программист из Санкт-Петербурга. ㅤㅤㅤㅤㅤ 
+                
+                
+                </div>
+            </div>
+        </div>
+
+        <!-- Кнопки в правом нижнем углу -->
+        <div class="corner-buttons">
+            <button class="corner-btn tg-btn" onclick="window.open('https://t.me/Cogciv', '_blank')">
+                <i class="fab fa-telegram"></i>
+            </button>
+            <button class="corner-btn tgk-btn" onclick="window.open('https://t.me/+8vp_uWKrXR5hYzYy', '_blank')">
+                <i class="fas fa-users"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Анимация появления
+        document.addEventListener('DOMContentLoaded', function() {
+            const card = document.querySelector('.main-card');
+            card.style.opacity = '0';
+            card.style.transform = 'translateX(-30px)';
+            
+            setTimeout(() => {
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateX(0)';
+            }, 100);
+        });
+
+        // Замените на ваши реальные ссылки
+        function setupLinks() {
+            const tgButton = document.querySelector('.tg-btn');
+            const tgkButton = document.querySelector('.tgk-btn');
+            
+            tgButton.onclick = () => window.open('https://t.me/ВАШ_НИКНЕЙМ', '_blank');
+            tgkButton.onclick = () => window.open('https://t.me/ВАШ_КАНАЛ', '_blank');
+        }
+
+        setupLinks();
+    </script>
+</body>
+</html>
