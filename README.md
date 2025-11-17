@@ -1,1 +1,1 @@
-https://reachingthestarsalone-a11y.github.io/Wortexs/html.html
+тут нет ничего. опенсурс.
